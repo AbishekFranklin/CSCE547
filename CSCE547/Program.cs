@@ -9,6 +9,7 @@ namespace MyFirstApp
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, Abishek!");
+            Console.WriteLine("Hello, CSCE547!");
         }
     }
 }
