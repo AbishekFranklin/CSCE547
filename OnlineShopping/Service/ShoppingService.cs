@@ -38,7 +38,7 @@ namespace OnlineShopping.Services
             // Check if a cart with the given name already exists in the database.
             if (existingCart != null)
             {
-                return new OkObjectResult($"Cart already exists. Cart ID: {existingCart.Id}");
+                return new OkObjectResult(new { cartID = existingCart.Id });
             }
 
             // Create a new cart with the given name and add it to the database.
@@ -46,7 +46,7 @@ namespace OnlineShopping.Services
             _context.Carts.Add(newCart);
             _context.SaveChanges();
             int cartId = newCart.Id; // Retrieve the generated cart ID
-            return new OkObjectResult($"New cart created successfully. Cart ID: {cartId}");
+            return new OkObjectResult(new { cartID = cartId });
         }
 
         // Method to add an item to the cart with the given cart ID, item ID, and quantity.

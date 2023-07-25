@@ -48,6 +48,8 @@ namespace OnlineShopping.Models
                 }
             }
 
+            discountedTotal = decimal.Round(discountedTotal, 2);
+
             return discountedTotal;
         }
 
@@ -62,6 +64,8 @@ namespace OnlineShopping.Models
 
             // Calculate the total with taxes
             totalCost += taxes;
+
+            totalCost = decimal.Round(totalCost, 2);
 
             return totalCost;
         }
